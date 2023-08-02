@@ -1,0 +1,55 @@
+{
+    "service": "PBN",
+    "service-path": "/PBN_EnergyUSE",
+    "sif400": {
+        "sif401": {            
+            "energy":{
+                "power":{
+                    "proto":"opcua",
+                    "sensorType":"energy", 
+                    "valueType":"Number",
+                    "url":"opc.tcp://130.130.130.1:4840",
+                    "nodeId":"ns=6;s=::AsGlobalPV:MESPAEA_rActivePower", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                },
+                "voltage":{
+                    "proto":"opcua", 
+                    "sensorType":"energy", 
+                    "valueType":"Number",
+                    "url":"opc.tcp://130.130.130.1:4840",
+                    "nodeId":"ns=6;s=::AsGlobalPV:MESPAEA_rVoltage", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                },
+                "current":{
+                    "proto":"opcua",
+                    "sensorType":"energy", 
+                    "valueType":"Number",
+                    "url":"opc.tcp://130.130.130.1:4840",
+                    "nodeId":"ns=6;s=::AsGlobalPV:MESPAEA_rCurrent", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                },
+                "powerFactor":{
+                    "proto":"opcua",
+                    "sensorType":"energy", 
+                    "valueType":"Number",
+                    "url":"opc.tcp://130.130.130.1:4840",
+                    "nodeId":"ns=6;s=::AsGlobalPV:MESPAEA_rPowerFactor", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                },
+                "energyConsumed":{
+                    "proto":"opcua",
+                    "sensorType":"energy", 
+                    "valueType":"Number",
+                    "url":"opc.tcp://130.130.130.1:4840",
+                    "nodeId":"ns=6;s=::AsGlobalPV:MESPAEA_udiEnergyConsumed", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "service": "PBN2",
+    "service-path": "/PBNrecycling",
+    "sif4021": {
+        "recycling": {
+            "cycle_time": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Ciklusido",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "rpm": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_RPM",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "sum_count": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Ossz_DB",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "sum_blue": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Kek_DB",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "sum_red": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Sarga_DB",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "sum_yellow": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Piros_DB",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            },
+            "status": {
+                "proto": "opcua",
+                "sensorType": "time",
+                "valueType": "Number",
+                "url": "opc.tcp://192.168.1.250:4840",
+                "nodeId": "s=RootNode_Running",
+                "refreshInterval": 10,
+                "subscribe": "True"
+            }
+        }
+    }
+}

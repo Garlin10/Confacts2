@@ -1,0 +1,101 @@
+version: "3.1"
+
+volumes:
+    mongo-db: ~
+    crate-db: ~
+    redis-db: ~
+    grafana: ~
+
+services:
+    orion:
+        image: fiware/orion:${ORION_VERSION}
+        hostname: orion
+        container_name: fiware-orion
+        depends_on:
+            - mongodb
+        expose:
+            - "${ORION_PORT}"
+        ports:
+            - "${ORION_PORT}:${ORION_PORT}"
+        command: -dbhost mongodb
+
+    mongodb:
+        image: mongo:${MONGODB_VERSION}
+        hostname: mongodb
+        container_name: db-mongo
+        ports:
+            - "${MONGODB_PORT}:${MONGODB_PORT}"
+        command: --bind_ip_all
+        volumes:
+            - mongo-db:/data
+
+    quantumleap:
+        image: orchestracities/quantumleap:${QUANTUMLEAP_VERSION}
+        hostname: quantumleap
+        container_name: fiware-quantumleap
+        ports:
+            - "${QUANTUMLEAP_PORT}:${QUANTUMLEAP_PORT}"
+        depends_on:
+            - crate-db
+            - redis-db
+        environment:
+            - CRATE_HOST=crate-db
+            - REDIS_HOST=redis-db
+            - REDIS_PORT=${REDIS_PORT}
+            - LOGLEVEL=DEBUG
+        healthcheck:
+            test: curl --fail -s http://quantumleap:${QUANTUMLEAP_PORT}/version || exit 1
+
+    crate-db:
+        image: crate:${CRATE_VERSION}
+        hostname: crate-db
+        container_name: db-crate
+        ports:
+            # Admin UI
+            - "${CRATE_ADMIN_PORT}:${CRATE_ADMIN_PORT}"
+            # Transport protocol
+            - "${CRATE_TRANSPORT_PORT}:${CRATE_TRANSPORT_PORT}"
+            - 5432:5432
+        command: ["crate",
+                 "-Cauth.host_based.enabled=false",
+                 "-Ccluster.name=democluster",
+                 "-Chttp.cors.enabled=true",
+                 '-Chttp.cors.allow-origin="*"',
+                 "-Cnode.store.allow_mmapfs=false",
+                 #"-Dcom.sun.management.jmxremote",
+                 #"-Dcom.sun.management.jmxremote.port=7979",
+                 #"-Dcom.sun.management.jmxremote.ssl=false",
+                 #"-Dcom.sun.management.jmxremote.authenticate=false"
+                 ]
+        environment:
+            - CRATE_HEAP_SIZE=2g
+        volumes:
+            - crate-db:/data       
+
+    redis-db:
+        image: redis:${REDIS_VERSION}
+        hostname: redis-db
+        container_name: db-redis
+        #networks:
+        #    - default
+        ports:
+            - "${REDIS_PORT}:${REDIS_PORT}"
+        volumes:
+            - redis-db:/data
+
+
+    #grafana:
+    #    image: grafana/grafana:${GRAFANA_VERSION}
+    #    container_name: grafana
+    #    depends_on:
+    #        - crate-db
+    #    ports:
+    #        - "${GRAFANA_PORT}:${GRAFANA_PORT}"
+    #    environment:
+    #        - GF_INSTALL_PLUGINS=https://github.com/orchestracities/grafana-map-plugin/archive/master.zip;grafana-map-plugin,grafana-clock-panel,grafana-worldmap-panel
+    #        - GF_ALLOW_EMBEDDING=true
+    #        - GF_SECURITY_ALLOW_EMBEDDING=true
+    #        - GF_AUTH_ANONYMOUS_ENABLED=true        
+    #    volumes:
+    #        - grafana:/var/lib/grafana
+    
