@@ -1,7 +1,7 @@
 
 
 
-Docker start
+Docker start:
 docker-compose up --build
 
 
