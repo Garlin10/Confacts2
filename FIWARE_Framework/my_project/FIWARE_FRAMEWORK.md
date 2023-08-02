@@ -3,7 +3,7 @@
 This folder contains a FIWARE-based framework for IDS system provided by [Inesc Tec](https://gitlab.inesctec.pt/ids/dataspace-4confacts).
 
 ## FIWARE-Based Framework
-![FIWARE Framework](../images/FIWARE_FRAMEWORK.png)
+![FIWARE Framework](../../images/FIWARE_FRAMEWORK.png)
 
 The FIWARE-based framework is designed to address specific challenges and facilitate efficient development using the FIWARE ecosystem. It consists of two major components:
 
@@ -24,7 +24,7 @@ To get started with the FIWARE framework image, please go through the following 
 ## License
 
 This project is licensed by [PBN](https://www.pbn.hu/).
-![PBN](images/PBN_logo_transparent.png)
+![PBN](../../images/PBN_logo_transparent.png)
 ## Acknowledgments
 
 Special thanks to [Péter Mátyás](https://www.linkedin.com/in/p%C3%A9ter-m%C3%A1ty%C3%A1s-a86aa4130), who started the whole FIWARE system integration back then at PBN.
