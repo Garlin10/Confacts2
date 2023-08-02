@@ -1,6 +1,6 @@
-# Project Name
+# Confacts 2 FIWARE Framework for IDS system
 
-This repository contains a FIWARE Docker image and a FIWARE-based framework.
+This repository contains a FIWARE Docker image and a FIWARE-based framework for IDS system provided by [Inesc Tec](https://gitlab.inesctec.pt/ids/dataspace-4confacts).
 
 ## FIWARE-Based Framework
 
@@ -14,26 +14,18 @@ The data collector and uploader component allow seamless integration with variou
 
 The IDS Agent is the second major component of the framework. It provides functionalities related to Identity Management and Access Control within the FIWARE ecosystem. This component plays a vital role in securing data and controlling access to various services.
 
-## Docker Image
+## FIWARE Image
 
-The Docker image included in this repository allows you to deploy and run FIWARE easily. It contains all the necessary dependencies and configurations to set up a functional FIWARE instance effortlessly.
+The FIWARE Docker image included in this repository allows you to deploy and run FIWARE easily. It contains all the necessary dependencies and configurations to set up a functional FIWARE instance effortlessly.
 
 ## Getting Started
 
 To get started with the FIWARE framework and Docker image, please refer to the following sections:
 
-- [Installation](docs/installation.md): Detailed instructions on how to install and set up the FIWARE framework using the provided Docker image.
-- [Usage](docs/usage.md): A guide on how to utilize the functionalities of the data collector, uploader, and IDS Agent in your applications.
-- [Configuration](docs/configuration.md): Information on how to customize and configure the FIWARE framework based on your specific needs.
-
-## Contribution
-
-We welcome contributions to this project! If you find any issues, have suggestions for improvements, or want to add new features, please feel free to open a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+- [FIWARE Installation](docs/fiware_installation.md): Detailed instructions on how to install and set up the FIWARE solution using the provided Docker image.
+- [FIWARE Framework_Installation](docs/fiware_framework_installation.md): Detailed instructions on how to install and set up the FIWARE framework using the provided Docker image.
+- [Configuration](docs/configuration.md): A guide on how to write the required configuration files.
 
 ## Acknowledgments
 
-Special thanks to the FIWARE community and all contributors who made this project possible.
+Special thanks to [Péter Mátyás](https://www.linkedin.com/in/p%C3%A9ter-m%C3%A1ty%C3%A1s-a86aa4130), who started the whole FIWARE system integration back then at PBN.
