@@ -13,7 +13,7 @@ The data collector and uploader component allow seamless integration with variou
 
 ### IDS Agent
 
-The IDS Agent is the second major component of the framework. It provides functionalities related to Identity Management and Access Control within the FIWARE ecosystem. This component plays a vital role in securing data and controlling access to various services.
+The IDS Agent is the second major component of the framework. This component plays a vital role getting data and updating it to FIWARE from Inesc Tec IDS solution.
 
 ## FIWARE Image
 
