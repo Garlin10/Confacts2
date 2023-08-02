@@ -27,7 +27,11 @@ To get started with the FIWARE framework image, please go through the following 
 
 -Write the configuration files for data collection and upload at [configs](configs)
 
--Insert the configuration files for the IDS data collection to [config_receiver](config_receiver)
+-Insert the configuration files for the IDS data collection to [config_receiver](configs_receiver)
+
+After that use docker-compose up --build.
+
+Or docker-compose up --build -d for background running.
 
 
 ## License
