@@ -22,9 +22,13 @@ The IDS Agent is the second major component of the framework. This component pla
 To get started with the FIWARE framework image, please go through the following sessions:
 
 -Edit the [IDS configuration](IDS_config.json)
+
 -Edit the [FIWARE configuration](fiware_config.ini)
+
 -Write the configuration files for data collection and upload at [configs](configs)
+
 -Insert the configuration files for the IDS data collection to [config_receiver](config_receiver)
+
 
 ## License
 
