@@ -10,6 +10,11 @@ The FIWARE Docker image included in this repository allows you to deploy and run
 
 ## Getting Started
 
+You can edit the ports for the solution in the [.env](.env) file.
+
+After that it can be started with ```docker-compose up --build``` command.
+
+Or can be started in the background with a ```-d``` flag. ```docker-compose up --build -d```
 
 ## Acknowledgments
 
