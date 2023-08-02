@@ -26,7 +26,10 @@ To get started with the FIWARE framework and Docker image, please refer to the f
 - [FIWARE Installation](docs/fiware_installation.md): Detailed instructions on how to install and set up the FIWARE solution using the provided Docker image.
 - [FIWARE Framework_Installation](docs/fiware_framework_installation.md): Detailed instructions on how to install and set up the FIWARE framework using the provided Docker image.
 - [Configuration](docs/configuration.md): A guide on how to write the required configuration files.
+## License
 
+This project is licensed by [PBN](https://www.pbn.hu/).
+![PBN](images/PBN_logo_transparent.png)
 ## Acknowledgments
 
 Special thanks to [Péter Mátyás](https://www.linkedin.com/in/p%C3%A9ter-m%C3%A1ty%C3%A1s-a86aa4130), who started the whole FIWARE system integration back then at PBN.
