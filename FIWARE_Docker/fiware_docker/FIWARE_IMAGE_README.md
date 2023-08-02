@@ -1,19 +1,8 @@
-# Confacts 2 FIWARE Framework for IDS system
+# FIWARE Docker image
 
-This repository contains a FIWARE Docker image and a FIWARE-based framework for IDS system provided by [Inesc Tec](https://gitlab.inesctec.pt/ids/dataspace-4confacts).
+![FIWARE](images/FIWARE-LOGO.png)
 
-## FIWARE-Based Framework
-![FIWARE Framework](images/FIWARE_FRAMEWORK.png)
-
-The FIWARE-based framework is designed to address specific challenges and facilitate efficient development using the FIWARE ecosystem. It consists of two major components:
-
-### Data Collector and Uploader
-
-The data collector and uploader component allow seamless integration with various data sources and are responsible for collecting and uploading data to the FIWARE platform. This component simplifies the process of data ingestion and ensures smooth data flow.
-
-### IDS Agent
-
-The IDS Agent is the second major component of the framework. This component plays a vital role getting data and updating it to FIWARE from Inesc Tec IDS solution.
+This folder contains a FIWARE Docker image.
 
 ## FIWARE Image
 
@@ -21,11 +10,6 @@ The FIWARE Docker image included in this repository allows you to deploy and run
 
 ## Getting Started
 
-To get started with the FIWARE framework and Docker image, please refer to the following sections:
-
-- [FIWARE Installation](docs/fiware_installation.md): Detailed instructions on how to install and set up the FIWARE solution using the provided Docker image.
-- [FIWARE Framework_Installation](docs/fiware_framework_installation.md): Detailed instructions on how to install and set up the FIWARE framework using the provided Docker image.
-- [Configuration](docs/configuration.md): A guide on how to write the required configuration files.
 
 ## Acknowledgments
 
