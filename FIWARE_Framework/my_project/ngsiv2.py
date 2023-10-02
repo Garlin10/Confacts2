@@ -37,7 +37,7 @@ class NGSIv2():
         elif type == 'Float':
             return 0.0
         elif type == 'Text':
-            return ''
+            return " "
         elif type == 'Boolean':
             return False
 
