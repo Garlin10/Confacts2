@@ -1,0 +1,17 @@
+{
+    "service": "[Company]",
+    "service-path": "/[Company_Module]",
+    "[Device]": {
+        "[Purpose]": {
+            "[Name]": {
+                "proto": "[opcua/http_rest]",
+                "sensorType": "[Name of table]",
+                "valueType": "[Text/Number/Float/Boolean]",
+                "url": "opc.tcp://[ip]",
+                "nodeId": "[NodeId]",
+                "refreshInterval": 10,
+                "subscribe": "[True/False]"
+            }
+        }
+    }
+}

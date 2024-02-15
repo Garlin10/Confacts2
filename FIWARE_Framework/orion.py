@@ -96,7 +96,6 @@ class Orion():
     # TODO: Ebből még egyet csinálni ahol  scnincs IDS feltöltés
     # TODO: Ezt meghívni a még megírandó IDS agent-tel.
     def updateBatchValues(self, ids):
-        
         service = describer.getService(ids[0])
         service_path = describer.getServicePath(ids[0])
         print(f"service: {service}")
@@ -107,14 +106,26 @@ class Orion():
                     "fiware-servicepath": service_path,
                     }
         url = self.orionHost+f'/v2/op/update'
-        data = ngsiv2.getBatchUpdateAttribute(ids)
+        
         print("----------START--------\n")
-        print(data)   
-        self.getentities(service, service_path, data)
-        response = requests.post(url, data=data, headers=headers, timeout=self.orionTimeout)
-        print("response:" +response.text)
+        try:
+        # Your existing code
+            data = ngsiv2.getBatchUpdateAttribute(ids)
+            print(data)
+            print("ngsiv2")
+        except Exception as e:
+            print(f"An error occurred: {e}")   
+        try:
+            print("post")
+            self.getentities(service, service_path, data)
+            response = requests.post(url, data=data, headers=headers, timeout=self.orionTimeout)
+            print("response:" +f"{response}")
+        except Exception as e:
+            print(f"An error occurred: {e}")     
+        
         print("----------END-----------\n")
-        return response.text
+        
+        return response
 
 
     def queryEntity(self, service, servicePath, id=None, type=None, options=None, attrs=None, q=None, limit=1000):

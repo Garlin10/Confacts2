@@ -1,0 +1,399 @@
+2024.02.13 11:49:35,834 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:51:11,897 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:51:12,11 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:52:11 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 11:52:11,885 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:52:11,909 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:53:11 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 11:53:11,883 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:53:11,910 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:54:11 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 11:56:19,260 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:56:19,300 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:57:19 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 11:57:19,253 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:57:19,278 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:58:19 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 11:58:19,247 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 11:58:19,282 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 11:59:19 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 425, in parse_url
+    host, port = _HOST_PORT_RE.match(host_port).groups()  # type: ignore[union-attr]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 434, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\urllib3\util\url.py", line 451, in parse_url
+    raise LocationParseError(source_url) from e
+urllib3.exceptions.LocationParseError: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 113, in updateBatchValues
+    self.getentities(service, service_path, data)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 39, in getentities
+    existing_offers = IDS_Broker.GetDataResources()
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\IDS_put.py", line 48, in GetDataResources
+    data = requests.get(f'https://{IP}/{COMPANY}/api/data-resources-provided', headers=headers, auth=auth, verify=False).text
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\requests\models.py", line 436, in prepare_url
+    raise InvalidURL(*e.args)
+requests.exceptions.InvalidURL: Failed to parse: https://[IDS_ip]:[IDS_port]/[IDS_name]/api/data-resources-provided
+2024.02.13 12:02:30,847 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:02:30,883 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:03:30 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 123, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:03:30,862 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:03:30,882 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:04:30 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 123, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:06:57,975 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:06:57,990 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:07:57 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 126, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:09:15,13 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:09:15,53 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:10:15 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:10:15,54 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:10:15,80 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:11:15 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:11:15,25 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:11:15,67 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:12:15 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:13:20,423 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:13:20,462 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:14:20 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:16:57,983 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:16:58,11 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:17:57 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:17:57,986 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:17:58,16 apscheduler.executors.default ERROR Job "update (trigger: interval[0:01:00], next run at: 2024-02-13 12:18:57 CET)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\galgy\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\scheduler.py", line 12, in update
+    orion.updateBatchValues(ids=ids)
+  File "E:\Confacts2024\Confacts2\FIWARE_Framework\my_project\orion.py", line 128, in updateBatchValues
+    return response.text
+UnboundLocalError: local variable 'response' referenced before assignment
+2024.02.13 12:20:30,647 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:21:30,659 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:22:30,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:23:30,638 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:24:30,665 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:25:30,638 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:26:30,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:27:30,668 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:28:30,665 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:29:30,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:30:30,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:31:30,675 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:32:30,661 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:33:30,659 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:34:30,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:35:30,661 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:38:33,990 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:40:36,86 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:41:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:42:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:43:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:44:36,118 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:45:36,104 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:46:36,116 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:47:36,100 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:48:36,95 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:49:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:50:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:51:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:52:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:53:36,93 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:54:36,113 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:55:36,101 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:56:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:57:36,99 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:58:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 12:59:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:00:36,110 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:01:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:02:36,100 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:03:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:04:36,104 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:05:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:06:36,109 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:07:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:08:36,109 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:09:36,109 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:10:36,82 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:11:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:12:36,105 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:13:36,80 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:14:36,100 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:15:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.13 13:16:36,90 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.14 08:54:15,650 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead
+2024.02.14 08:55:15,641 opcua.client.client WARNING Requested secure channel timeout to be 3600000ms, got 600000ms instead

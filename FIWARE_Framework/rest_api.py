@@ -48,9 +48,29 @@ class RestApiOperator():
         except:
             return False
 if __name__ == "__main__":
-    operator = RestApiOperator('http://130.130.130.199/api/warehouseStatus?stationTypeId=406')
-    # print(operator.getHTTP('http://192.168.1.62/api/v1/printer'))
-    # print(operator.getHTTP('http://192.168.1.62/api/v1/printer/bed/temperature/current'))
-    # asd = operator.getHTTP('http://192.168.1.62/api/v1/printer')    
-    # print(asd["bed"]["temperature"])
-    print(operator.getBatchValues(['$.Object.Locations[?(@.LocationID=1)].SKU.ChildSKUs[0].Article.Code','$.Object.Locations[?(@.LocationID=1)].LocationStatus.Description']))
+    def find_in_json(data, key_name):
+        if isinstance(data, dict):
+            for key, value in data.items():
+                if key == key_name:
+                    return value
+                elif isinstance(value, (dict, list)):
+                    result = find_in_json(value, key_name)
+                    if result is not None:
+                        return result
+        elif isinstance(data, list):
+            for item in data:
+                if isinstance(item, (dict, list)):
+                    result = find_in_json(item, key_name)
+                    if result is not None:
+                        return result
+        return None
+    # Read the content of the JSON file
+    with open("configs/example_provider_config.json", 'r') as file:
+        config_json = file.read()
+
+    # Parse the JSON
+    config = json.loads(config_json)
+
+    # Dynamically find the URL
+    url = find_in_json(config, "url")
+    operator = RestApiOperator(url)
