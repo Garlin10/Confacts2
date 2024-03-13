@@ -23,7 +23,7 @@ The FIWARE Docker image included in this repository allows you to deploy and run
 
 To get started with the FIWARE framework and Docker image, please refer to the following sections:
 
-- [FIWARE Installation](FIWARE_Docker/fiware_docker/FIWARE_IMAGE_README.md): Detailed instructions on how to install and set up the FIWARE solution using the provided Docker image.
+- [FIWARE Installation](FIWARE_Docker/FIWARE_IMAGE_README.md): Detailed instructions on how to install and set up the FIWARE solution using the provided Docker image.
 - [FIWARE Framework Installation](FIWARE_Framework/my_project/FIWARE_FRAMEWORK.md): Detailed instructions on how to install and set up the FIWARE framework using the provided Docker image.
 - [Configuration](FIWARE_Framework/my_project/FIWARE_FRAMEWORK.md): A guide on how to write the required configuration files.
 ## License
