@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9700:80"
+    volumes:
+      - ./app/static:/app/static
+    command: >
+      gunicorn -w 1 -k uvicorn.workers.UvicornWorker main:app
+      --bind 0.0.0.0:80
+      --log-level info
+      --access-logfile -
+      --access-logformat "%(h)s %(l)s %(u)s %(t)s \"%(r)s\" %(s)s %(b)s \"%(f)s\" \"%(a)s\""

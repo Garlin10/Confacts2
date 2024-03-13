@@ -1,0 +1,220 @@
+{
+    "service": "ProductionLine",
+    "service-path": "/pbn/amlab/sif400",
+    "sif400": {
+        "Object": {
+            "ArticleContentType": {
+                "Blue": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[0].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Yellow": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Red": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[2].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Water": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[3].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Oil": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[4].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Custom": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[5].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Empty": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ArticleContentType[6].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            },
+            "OrderType":{
+                "MTO": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.OrderType[0].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "MTS": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.OrderType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Expedition": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.OrderType[2].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            },
+            "CanisterType":{
+                "Square": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.CanisterType[0].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Round": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.CanisterType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            },
+            "ProductType":{
+                "Simple": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ProductType[0].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "Pack": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ProductType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            },
+            "WareHouseType":{
+                "SIF-406":{
+                    "Free": {
+                        "proto": "http_rest",
+                        "sensorType": "containerLoader",
+                        "valueType": "Number",
+                        "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                        "xpath": "$.Object.WarehouseType[0].value[0].value",
+                        "refreshInterval": 86400,
+                        "subscribe": "True"
+                    },
+                    "Occupied": {
+                        "proto": "http_rest",
+                        "sensorType": "containerLoader",
+                        "valueType": "Number",
+                        "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                        "xpath": "$.Object.WarehouseType[0].value[1].value",
+                        "refreshInterval": 86400,
+                        "subscribe": "True"
+                    },
+                    "Disabled": {
+                        "proto": "http_rest",
+                        "sensorType": "containerLoader",
+                        "valueType": "Number",
+                        "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                        "xpath": "$.Object.WarehouseType[0].value[2].value",
+                        "refreshInterval": 86400,
+                        "subscribe": "True"
+                    }
+                },
+                "SIF-408": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.WarehouseType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "SIF409": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.WarehouseType[2].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "SIF-412": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.WarehouseType[3].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            },
+            "ExpeditionType":{
+                "SIF-407D": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ExpeditionType[0].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                },
+                "SIF-412": {
+                    "proto": "http_rest",
+                    "sensorType": "containerLoader",
+                    "valueType": "Number",
+                    "url": "http://130.130.130.199//api/performanceAnalytics?paOption=ProductionAndLogistics&from={today}&to={tomorrow}",
+                    "xpath": "$.Object.ExpeditionType[1].value",
+                    "refreshInterval": 86400,
+                    "subscribe": "True"
+                }
+            }
+        }
+    }
+}

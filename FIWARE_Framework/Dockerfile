@@ -1,14 +1,6 @@
-# Use an official Python runtime as a base image
-FROM python:3.9
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
-# Set the working directory inside the container
-WORKDIR /app
+COPY ./app /app
+COPY ./requirements.txt /app/requirements.txt
 
-# Copy everything in the current directory to the container's working directory
-COPY . .
-
-# Install dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Set the entry point for the scheduled programs
-CMD [ "python", "scheduler.py" ]
+RUN pip install --no-cache-dir -r /app/requirements.txt

@@ -18,6 +18,10 @@ services:
         ports:
             - "${ORION_PORT}:${ORION_PORT}"
         command: -dbhost mongodb
+        volumes:
+            - mongo-db:/data
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro   
 
     mongodb:
         image: mongo:${MONGODB_VERSION}
@@ -28,6 +32,8 @@ services:
         command: --bind_ip_all
         volumes:
             - mongo-db:/data
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro   
 
     quantumleap:
         image: orchestracities/quantumleap:${QUANTUMLEAP_VERSION}
@@ -45,7 +51,9 @@ services:
             - LOGLEVEL=DEBUG
         healthcheck:
             test: curl --fail -s http://quantumleap:${QUANTUMLEAP_PORT}/version || exit 1
-
+        volumes:
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro   
     crate-db:
         image: crate:${CRATE_VERSION}
         hostname: crate-db
@@ -70,7 +78,9 @@ services:
         environment:
             - CRATE_HEAP_SIZE=2g
         volumes:
-            - crate-db:/data       
+            - crate-db:/data 
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro            
 
     redis-db:
         image: redis:${REDIS_VERSION}
@@ -82,6 +92,8 @@ services:
             - "${REDIS_PORT}:${REDIS_PORT}"
         volumes:
             - redis-db:/data
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro   
 
 
     #grafana:

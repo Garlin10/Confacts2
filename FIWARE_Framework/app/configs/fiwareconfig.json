@@ -1,0 +1,11 @@
+{
+  "orion": {
+    "url": "http://192.168.1.200:1026",
+    "create_timeout": 100,
+    "timeout": 30
+  },
+  "quantumleap": {
+    "url": "http://192.168.1.200:8668/v2/notify",
+    "timeout": 30
+  }
+}

@@ -1,0 +1,53 @@
+{   "service":"3dprinter",
+    "service-path":"/pbn/amlab/ultimaker",
+    "ultimaker":{
+        "bed":{
+            "temperature":{
+                "current":{
+                    "proto":"http_rest",
+                    "sensorType":"temperature", 
+                    "valueType":"Number",
+                    "url":"192.168.1.621/api/v1/printer",
+                    "value_type": "dictionary", 
+                    "xpath":"$.bed.temperature.current", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"
+                    
+                },
+                "target":{
+                    "proto":"http_rest",
+                    "sensorType":"temperature", 
+                    "valueType":"Number",
+                    "url":"192.168.1.62/api/v1/printer",
+                    "value_type": "dictionary", 
+                    "xpath":"$.bed.temperature.target1", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"}
+                
+                }                
+        },
+        "hs110":{
+            "potmeter":{
+                "power":{
+                    "proto":"hs110", 
+                    "sensorType":"temperature", 
+                    "valueType":"Number",
+                    "url":"192.168.1.171",
+                    "nodeId":"power_w", 
+                    "refreshInterval":30, 
+                    "subscribe":"True"
+                },
+                "total":{ 
+                    "proto":"hs110",
+                    "sensorType":"temperature", 
+                    "valueType":"Number",
+                    "url":"192.168.1.16",
+                    "nodeId":"total_wh1", 
+                    "refreshInterval":10, 
+                    "subscribe":"True"      
+                }
+            }                
+        }
+    
+    }
+}

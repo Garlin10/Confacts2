@@ -1,6 +1,0 @@
-{
-    "IP": "[IDS_ip]:[IDS_port]",
-    "USER": "[IDS_user]",
-    "PASS": "[IDS_pass]",
-    "COMPANY": "[IDS_name]"
-}

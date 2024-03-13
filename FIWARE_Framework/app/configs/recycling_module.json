@@ -1,0 +1,349 @@
+{
+  "type": "provider",
+  "groups": [
+    {
+      "name": "sif4007",
+      "type": "subgroup",
+      "queries": [
+        {
+          "name": "recycling_opcua",
+          "type": "opcua",
+          "address": "opc.tcp://192.168.1.250:4840",
+          "active": true,
+          "refreshinterval": 20,
+          "parser": {
+            "type": "opcua_batch",
+            "map": [
+              {
+                "fromfield": "s=RootNode_Ciklusido",
+                "tofield": "ciklusido"
+              },
+              {
+                "fromfield": "s=RootNode_RPM",
+                "tofield": "rpm"
+              },
+              {
+                "fromfield": "s=RootNode_Ossz_DB",
+                "tofield": "ossz_db"
+              },
+              {
+                "fromfield": "s=RootNode_Kek_DB",
+                "tofield": "kek_db"
+              },
+              {
+                "fromfield": "s=RootNode_Sarga_DB",
+                "tofield": "sarga_db"
+              },
+              {
+                "fromfield": "s=RootNode_Piros_DB",
+                "tofield": "piros_db"
+              }
+            ]
+          }
+        },
+        {
+          "name": "status_recycling_opcua",
+          "type": "opcua",
+          "address": "opc.tcp://192.168.1.250:4840",
+          "active": true,
+          "refreshinterval": 10,
+          "parser": {
+            "type": "opcua_batch",
+            "map": [
+              {
+                "fromfield": "s=RootNode_Running",
+                "tofield": "running"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sifvistest",
+          "type": "rest",
+          "address": "http://192.168.1.46:8000/api/v1/sif400/appjson/home",
+          "active": false,
+          "refreshinterval": 10,
+          "parser": {
+            "type": "json_batch",
+            "map": [
+              {
+                "fromfield": "dx",
+                "tofield": "dx"
+              },
+              {
+                "fromfield": "dy",
+                "tofield": "dy"
+              },
+              {
+                "fromfield": "dz",
+                "tofield": "dz"
+              },
+              {
+                "fromfield": "staticimages.0.data",
+                "tofield": "firstimagedata"
+              },
+              {
+                "fromfield": "staticimages.1.name",
+                "tofield": "secondimagename"
+              }
+            ]
+          }
+        },
+        {
+          "name": "idstest",
+          "type": "ids",
+          "config": "idsconfig.json",
+          "data_resource_title": "PBN4",
+          "artifact_title": "Recycling_Module",
+          "active": true,
+          "refreshinterval": 15,
+          "parser": {
+            "type": "json_batch",
+            "map": [
+              {
+                "fromfield": "cycle_time.value",
+                "tofield": "cycle_time"
+              },
+              {
+                "fromfield": "rpm.value",
+                "tofield": "rpm"
+              },
+              {
+                "fromfield": "sum_count.value",
+                "tofield": "sum_count"
+              },
+              {
+                "fromfield": "sum_blue.value",
+                "tofield": "sum_blue"
+              },
+              {
+                "fromfield": "sum_red.value",
+                "tofield": "sum_red"
+              },
+              {
+                "fromfield": "sum_yellow.value",
+                "tofield": "sum_yellow"
+              }
+            ]
+          }
+        }
+      ],
+      "fields": [
+        {
+          "name": "cycle_time",
+          "sensorType": "time",
+          "valueType": "Text",
+          "query": "recycling_opcua",
+          "address": "ciklusido",
+          "subscribe": "True"
+        },
+        {
+          "name": "rpm",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "recycling_opcua",
+          "address": "rpm",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_count",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "recycling_opcua",
+          "address": "ossz_db",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_blue",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "recycling_opcua",
+          "address": "kek_db",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_red",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "recycling_opcua",
+          "address": "piros_db",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_yellow",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "recycling_opcua",
+          "address": "sarga_db",
+          "subscribe": "True"
+        },
+        {
+          "name": "cycle_time_ids",
+          "fieldname": "cycle_time",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "cycle_time",
+          "subscribe": "True"
+        },
+        {
+          "name": "rpm_ids",
+          "fieldname": "rpm",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "rpm",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_count_ids",
+          "fieldname": "sum_count",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "sum_count",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_blue_ids",
+          "fieldname": "sum_blue",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "sum_blue",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_red_ids",
+          "fieldname": "sum_red",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "sum_red",
+          "subscribe": "True"
+        },
+        {
+          "name": "sum_yellow_ids",
+          "fieldname": "sum_yellow",
+          "sensorType": "time",
+          "valueType": "Number",
+          "query": "idstest",
+          "address": "sum_yellow",
+          "subscribe": "True"
+        },
+        {
+          "name": "status",
+          "sensorType": "time",
+          "valueType": "Boolean",
+          "query": "status_recycling_opcua",
+          "address": "running",
+          "subscribe": "True"
+        }
+      ],
+      "mappings": [
+        {
+          "name": "pbnfiware",
+          "type": "fiware",
+          "config": "fiwareconfig.json",
+          "service": "PBN5",
+          "service_path": "/PBN_Recycling_5",
+          "subscribe": true,
+          "entities": [
+            {
+              "entityid": "Recycling_Module",
+              "entitytype": "recycling_device",
+              "type": "fiware_entity",
+              "subscribe": true,
+              "values": [
+                "cycle_time",
+                "rpm",
+                "sum_count",
+                "sum_blue",
+                "sum_red",
+                "sum_yellow",
+                "status"
+              ],
+              "extraperfield": [
+                {
+                  "fromfield": "valueType",
+                  "tofield": "type"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pbnidsfiware",
+          "type": "fiware",
+          "config": "fiwareconfig.json",
+          "service": "PBN_IDS",
+          "service_path": "/PBN_Recycling_4",
+          "subscribe": true,
+          "entities": [
+            {
+              "entityid": "Recycling_Module",
+              "entitytype": "recycling_device_ids",
+              "type": "fiware_entity",
+              "subscribe": true,
+              "values": [
+                "cycle_time_ids",
+                "rpm_ids",
+                "sum_count_ids",
+                "sum_blue_ids",
+                "sum_red_ids",
+                "sum_yellow_ids"
+              ],
+              "extraperfield": [
+                {
+                  "fromfield": "valueType",
+                  "tofield": "type"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pbnids",
+          "type": "ids",
+          "config": "idsconfig.json",
+          "data_resource_title": "PBN4",
+          "entities": [
+            {
+              "entityid": "Recycling_Module",
+              "entitytype": "recycling_device",
+              "type": "fiware_entity",
+              "values": [
+                "cycle_time",
+                "rpm",
+                "sum_count",
+                "sum_blue",
+                "sum_red",
+                "sum_yellow"
+              ],
+              "extraperfield": [
+                {
+                  "fromfield": "valueType",
+                  "tofield": "type"
+                }
+              ]
+            },
+            {
+              "entityid": "Recycling_Module_Status",
+              "entitytype": "recycling_device",
+              "type": "fiware_entity",
+              "values": [
+                "status"
+              ],
+              "extraperfield": [
+                {
+                  "fromfield": "valueType",
+                  "tofield": "type"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
