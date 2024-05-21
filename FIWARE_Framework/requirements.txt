@@ -2,3 +2,5 @@ fastapi
 uvicorn
 requests
 schedule
+opcua
+pydantic == 2.6.3

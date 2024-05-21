@@ -3,9 +3,10 @@ import json
 import configmodel
 import orion
 from typing import List
+import os
 
 def t1():
-    m:configmodel.Provider = configmodel.Provider.parse_file('./configs/recycling_module.json')
+    m:configmodel.Provider = configmodel.Provider.parse_file('configs/recycling_module.json')
     #m.groups[0].queries[0].Execute()
     #v = m.groups[0].queries[2].Execute()
     z = m.getqueryschedulegroups()
@@ -25,33 +26,39 @@ def t1():
                        fiware_service, fiware_servicepath)
 
 def t2():
-    m:configmodel.Provider = configmodel.Provider.parse_file('./configs/recycling_module.json')
+    m:configmodel.Provider = configmodel.Provider.parse_file('configs/recycling_module.json')
     z:List[configmodel.QueryScheduleGroup] = m.getqueryschedulegroups()
     zx:configmodel.QueryScheduleGroup
     for zx in z:
-        m1:configmodel.Provider = configmodel.Provider.parse_file('./configs/recycling_module.json')
+        m1:configmodel.Provider = configmodel.Provider.parse_file('configs/recycling_module.json')
         m1.Push(zx.querynames)
 
 
 def t3():
-    m:configmodel.Provider = configmodel.Provider.parse_file('./configs/recycling_module.json')
+    m:configmodel.Provider = configmodel.Provider.parse_file('configs/recycling_module.json')
     m.PushSchema()
     print("a")
 
 def t4():
-    m:configmodel.Provider = configmodel.Provider.parse_file('./configs/recycling_module.json')
+    m:configmodel.Provider = configmodel.Provider.parse_file('configs/recycling_module.json')
     m.evaluatefields(["idstest"])
 
 
 def t5():
-    m:configmodel.Provider = configmodel.Provider.parse_file('./configs/inegitest.json')
+    m:configmodel.Provider = configmodel.Provider.parse_file('configs/inegitest.json')
     z:List[configmodel.QueryScheduleGroup] = m.getqueryschedulegroups()
     zx:configmodel.QueryScheduleGroup
     for zx in z:
-        m1:configmodel.Provider = configmodel.Provider.parse_file('./configs/inegitest.json')
+        m1:configmodel.Provider = configmodel.Provider.parse_file('configs/inegitest.json')
         m1.Push(zx.querynames)
+
+def getconfigfiles(configpath:str = "./configs/models"):
+    files = os.listdir(configpath)
+    filenames = [configpath + "/" + f for f in files if  os.path.isfile(configpath + "/" +f)]
+    return filenames
+
 
 
 if __name__ == '__main__':
-    t5()
+    getconfigfiles()
     print("a")

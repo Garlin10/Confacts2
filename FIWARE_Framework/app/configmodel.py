@@ -11,9 +11,8 @@ import requests
 import orion
 import ids_lib
 def readconfig(configname:str)->dict:
-    f = open(f"./configs/{configname}")
+    f = open(f"./configs/settings/{configname}")
     return json.load(f)
-
 
 class QueryResult(BaseModel):
 

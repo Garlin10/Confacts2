@@ -6,6 +6,7 @@ import threading
 import time
 import uvicorn
 import logging
+import os
 app = FastAPI()
 
 import configmodel
@@ -39,11 +40,17 @@ class SchedulerThread(threading.Thread):
 
 scheduler_thread = SchedulerThread()
 
+def getconfigfiles(configpath:str = "./configs/models"):
+    files = os.listdir(configpath)
+    filenames = [configpath + "/" + f for f in files if  os.path.isfile(configpath + "/" +f)]
+    return filenames
+
+
 @app.get("/start")
 def start_scheduling():
     if not schedule.jobs:
-        configfiles = ['./configs/recycling_module.json']
-        #configfiles = ['./configs/inegitest.json']
+
+        configfiles = getconfigfiles()
         for cf in configfiles:
             model:configmodel.Provider = configmodel.Provider.parse_file(cf)
             qsgs = model.getqueryschedulegroups()
@@ -59,8 +66,7 @@ def start_scheduling():
 
 @app.get("/createschemas")
 def createschemas():
-    configfiles = ['./configs/recycling_module.json']
-    #configfiles = ['./configs/inegitest.json']
+    configfiles = getconfigfiles()
     for cf in configfiles:
         model: configmodel.Provider = configmodel.Provider.parse_file(cf)
         model.PushSchema()

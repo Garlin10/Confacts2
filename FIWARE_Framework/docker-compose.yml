@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9700:80"
+      - "1111:80"
     volumes:
       - ./app/static:/app/static
     command: >
